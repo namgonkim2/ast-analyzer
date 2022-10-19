@@ -61,6 +61,13 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
+        </dependency>
+
         <!--    test    -->
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -78,91 +85,6 @@
             <version>0.16</version>
             <scope>test</scope>
         </dependency>
-
-
-<!--        <dependency>-->
-<!--            <groupId>${parent.groupId}</groupId>-->
-<!--            <artifactId>jdt</artifactId>-->
-<!--            <version>${parent.version}</version>-->
-<!--            <classifier>shaded</classifier>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>${parent.groupId}</groupId>-->
-<!--            <artifactId>java-frontend</artifactId>-->
-<!--            <version>${parent.version}</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>${parent.groupId}</groupId>-->
-<!--            <artifactId>java-checks</artifactId>-->
-<!--            <version>${parent.version}</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>${parent.groupId}</groupId>-->
-<!--            <artifactId>java-checks-testkit</artifactId>-->
-<!--            <version>${parent.version}</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>${parent.groupId}</groupId>-->
-<!--            <artifactId>java-symbolic-execution</artifactId>-->
-<!--            <version>${parent.version}</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.sonarqube</groupId>-->
-<!--            <artifactId>sonar-plugin-api</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.sonarqube</groupId>-->
-<!--            <artifactId>sonar-plugin-api-impl</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.sonarlint.core</groupId>-->
-<!--            <artifactId>sonarlint-plugin-api</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.sonarlint.core</groupId>-->
-<!--            <artifactId>sonarlint-core</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.sslr</groupId>-->
-<!--            <artifactId>sslr-core</artifactId>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.ow2.asm</groupId>-->
-<!--                    <artifactId>asm</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.sslr</groupId>-->
-<!--            <artifactId>sslr-testing-harness</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.analyzer-commons</groupId>-->
-<!--            <artifactId>sonar-analyzer-recognizers</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.analyzer-commons</groupId>-->
-<!--            <artifactId>sonar-analyzer-commons</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.analyzer-commons</groupId>-->
-<!--            <artifactId>sonar-regex-parsing</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.sonarsource.analyzer-commons</groupId>-->
-<!--            <artifactId>sonar-performance-measure</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
 
     <properties>

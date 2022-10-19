@@ -1,5 +1,6 @@
 package org.tmaxcloud.superscm.rule;
 
+import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.StructuralPropertyDescriptor;
 import org.tmaxcloud.superscm.kind.Kind;
@@ -11,7 +12,9 @@ import java.util.Set;
 
 public abstract class RuleVisitor {
 
-    private Set<Integer> nodesToVisit;
+    private Set<Integer> nodesToVisit; // Rule 체크를 위해 방문할 노드의 type 을 저장하는 변수
+
+    private List<ASTNode> nodesToCheck; // Rule 체크로 방문할 노드 묶음
 
     public abstract List<Integer> nodesToVisit();
 
@@ -36,7 +39,12 @@ public abstract class RuleVisitor {
             }
         }
 
+        nodesToCheck = new ArrayList<>();
         visit(astNode);
+        for(ASTNode node : nodesToCheck) {
+            visitNode(node);
+        }
+        nodesToCheck.clear();
     }
 
     // 전체 astNode 를 방문하며 nodesToVisit()에 작성된 node의 type일 때,
@@ -46,7 +54,7 @@ public abstract class RuleVisitor {
         boolean isSubscribed = isSubscribed(nodeType);
 
         if(isSubscribed) {
-            visitNode(astNode);
+            nodesToCheck.add(astNode);
         }
 
         if(children.size() > 0) {

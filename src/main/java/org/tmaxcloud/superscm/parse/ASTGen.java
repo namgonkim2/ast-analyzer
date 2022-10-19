@@ -21,6 +21,7 @@ public class ASTGen {
             e.printStackTrace();
             throw new Exception("ECJ: Unable to parse file.");
         }
+        ASTNode astNode = (ASTNode) compilationUnit;
         return compilationUnit;
     }
 

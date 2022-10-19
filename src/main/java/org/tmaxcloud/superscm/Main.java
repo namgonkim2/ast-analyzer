@@ -5,11 +5,13 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.tmaxcloud.superscm.parse.ASTGen;
 import org.tmaxcloud.superscm.rule.RuleSet;
 import org.tmaxcloud.superscm.rule.RuleVisitor;
+import org.tmaxcloud.superscm.service.InsertASTService;
 import org.tmaxcloud.superscm.visit.ASTVisitor;
 
 public class Main {
 
-    public final static ASTVisitor astVisitor = new ASTVisitor();
+    private final static ASTVisitor astVisitor = new ASTVisitor();
+    private final static InsertASTService insertASTService = new InsertASTService();
 
     public static void main(String[] args) throws Exception {
         ASTGen astGen = new ASTGen();
@@ -18,10 +20,13 @@ public class Main {
         String source = astGen.getSourceCode(filePath);
         CompilationUnit compilationUnit = astGen.getCompilationUnit(source);
 
-        ASTNode root = compilationUnit.getRoot();
-        astVisitor.visitTree(root);
+        ASTNode astNode = compilationUnit.getRoot();
+        astVisitor.visitTree(astNode);
 
-        scan(root);
+        //Long srcId = insertASTService.insertSrc(5L, filePath);
+        insertASTService.insertAST(5L, astNode);
+
+        // scan(astNode);
     }
 
     public static void scan(ASTNode astnode) {

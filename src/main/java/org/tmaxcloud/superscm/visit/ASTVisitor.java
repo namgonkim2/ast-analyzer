@@ -28,7 +28,7 @@ public class ASTVisitor {
         }
     }
 
-    private ArrayList<ASTNode> getChildren(ASTNode node) {
+    public static ArrayList<ASTNode> getChildren(ASTNode node) {
         ArrayList<ASTNode> children = new ArrayList<>();
         List<Object> list = node.structuralPropertiesForType();
 
