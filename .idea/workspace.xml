@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f00131a-ea42-43d4-9286-94c6c0af8715" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/provider/ConnectionProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/service/InsertASTService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/service/ScanningService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/parse/ASTGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/parse/ASTGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/rule/RuleVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/rule/RuleVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/visit/ASTVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/visit/ASTVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/service/InsertASTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/service/InsertASTService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/demo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +39,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/namgon/java-work/token-insert&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/namgon/java-work/sonar-java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -147,23 +140,18 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/rule/codesmell/IfElseIfStatementEndsWithElseCheck.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/Main.java</url>
           <line>26</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/service/InsertASTService.java</url>
-          <line>122</line>
+          <line>132</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/tmaxcloud/superscm/service/InsertASTService.java</url>
-          <line>139</line>
+          <line>149</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>

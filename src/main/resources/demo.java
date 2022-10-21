@@ -13,6 +13,12 @@ public class SimpleProgram {
         // Noncompliant
         if (x == 16) {
             String s = "thenStatement-String";
+            //        // Noncompilant
+            if(y == 2) {
+                String t = "y is 2";
+            } else if(y == 3) {
+                String t = "y is 3";
+            }
         } else if (x == 18) {
             String s = "elseifStatement-String";
         } else if (x = 17) {
@@ -26,12 +32,6 @@ public class SimpleProgram {
         } else {
             String s = "elseStatement-String";
         }
-//        // Noncompilant
-//        if(y == 2) {
-//            String t = "y is 2";
-//        } else if(y == 3) {
-//            String t = "y is 3";
-//        }
     }
 
 //    public static void main(String[] args) {

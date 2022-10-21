@@ -6,13 +6,23 @@ import org.tmaxcloud.superscm.provider.ConnectionProvider;
 import org.tmaxcloud.superscm.visit.ASTVisitor;
 
 import java.sql.*;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+
+class BlockPair {
+    public Long id;
+    public Block block;
+
+    public BlockPair(Long id, Block block) {
+        this.id = id;
+        this.block = block;
+    }
+}
 
 public class InsertASTService {
     public static Long stmtId = 10L;
-
-    public static Long thenStmtId;
-    public static Long elseStmtId;
+    Queue<BlockPair> blockQueue = new LinkedList<>();
 
     public Long insertSrc(Long projectId, String path) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionProvider.getConnection();
@@ -147,8 +157,13 @@ public class InsertASTService {
 
             int nodeIntType = ifStatement.getNodeType();
             String expression = ifStatement.getExpression().toString();
-            // thenStmt 가 있으면 먼저 처리한다.
+            // thenStmt 가 있으면 큐에 우선 담아둔다
             Block thenStmtBlock = (Block) ifStatement.getThenStatement();
+            if(thenStmtBlock != null) {
+                Long parentStmtId = stmtId;
+                blockQueue.add(new BlockPair(parentStmtId, thenStmtBlock));
+            }
+
             List<ASTNode> listt = ASTVisitor.getChildren(stmt);
 
             String thenStatement = ifStatement.getThenStatement().toString();
@@ -175,9 +190,12 @@ public class InsertASTService {
                 stmtId++;
             }
 
-//            if(thenStmtBlock != null) {
-//                insertBlock(thenStmtBlock, globalStmtId++, nodeType, pstmt);
-//            }
+            if(blockQueue.size() > 0) {
+                while(!blockQueue.isEmpty()) {
+                    BlockPair blockIt = blockQueue.poll();
+                    insertBlock(blockIt.block, blockIt.id, nodeType, pstmt);
+                }
+            }
 
         }
         else if(nodeType.compareTo("VariableDeclarationStatement") == 0) {
